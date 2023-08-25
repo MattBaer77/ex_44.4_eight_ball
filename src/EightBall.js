@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './EightBall.css';
 
 const EightBall = ({answers}) => {
+
+    const randomIndexFromAnswers = () => {
+
+        return answers[Math.floor(Math.random() * answers.length)]
+
+    } 
+
+    let [answer, shakeEightBall] = useState(randomIndexFromAnswers())
+
     return (
 
-        <div className='EightBall'>
+        <div className='EightBall' onClick={() => shakeEightBall(randomIndexFromAnswers)}>
 
-            <p className='EightBall-text'>Think Of A Question</p>
+            <h3 className='EightBall-text'>{answer.msg}</h3>
 
         </div>
     )
 }
 
-EightBall.defaultProps = {answers: [
+EightBall.defaultProps = { answers: [
 
     { msg: "It is certain.", color: "green" },
     { msg: "It is decidedly so.", color: "green" },
