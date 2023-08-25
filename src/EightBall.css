@@ -1,0 +1,20 @@
+.EightBall {
+
+    display: inline-block;
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+
+}
+
+.EightBall-text {
+
+    display: inline-block;
+    padding-top: 42%;
+    text-align: center;
+    margin: 0
+
+}
