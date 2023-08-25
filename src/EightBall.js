@@ -3,17 +3,17 @@ import './EightBall.css';
 
 const EightBall = ({answers}) => {
 
-    const randomIndexFromAnswers = () => {
+    const randomAnswer = () => {
 
         return answers[Math.floor(Math.random() * answers.length)]
 
     } 
 
-    let [answer, shakeEightBall] = useState(randomIndexFromAnswers())
+    let [answer, shakeEightBall] = useState({msg: "Think of a Question", color:"black"})
 
     return (
 
-        <div className='EightBall' onClick={() => shakeEightBall(randomIndexFromAnswers)}>
+        <div className='EightBall' style={{backgroundColor:answer.color}} onClick={() => shakeEightBall(randomAnswer)}>
 
             <h3 className='EightBall-text'>{answer.msg}</h3>
 
